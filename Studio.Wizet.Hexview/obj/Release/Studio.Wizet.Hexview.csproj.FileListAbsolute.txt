@@ -1,0 +1,7 @@
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\bin\Release\Studio.Wizet.Hexview.dll
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\bin\Release\Studio.Wizet.Hexview.pdb
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\obj\Release\Studio.Wizet.Hexview.ByteEditor.resources
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\obj\Release\Studio.Wizet.Hexview.csproj.GenerateResource.cache
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\obj\Release\Studio.Wizet.Hexview.csproj.CoreCompileInputs.cache
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\obj\Release\Studio.Wizet.Hexview.dll
+C:\Projects\Wizet Studio\Studio.Wizet.Hexview\obj\Release\Studio.Wizet.Hexview.pdb

@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wizet_Studio</RootNamespace>
+    <AssemblyName>Wizet Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>wizet-studio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Codecs\ALawDecoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Codecs\ALawEncoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Codecs\G722Codec.cs" />
+    <Compile Include="Studio.Wizet.Audio\Codecs\MuLawDecoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Codecs\MuLawEncoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioCaptureClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClientBufferFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClientProperties.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClientShareMode.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClientStreamFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClientStreamOptions.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioClockClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeCallback.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeChannel.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeChannels.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeNotificationDelegate.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeStepInformation.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioEndpointVolumeVolumeRange.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioMeterInformation.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioMeterInformationChannels.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioRenderClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioSessionControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioSessionEventsCallback.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioSessionManager.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioSessionNotification.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioStreamCategory.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioStreamVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\AudioVolumeNotificationData.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\DataFlow.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\DeviceState.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\EEndpointHardwareSupport.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\AudioVolumeNotificationDataStruct.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\Blob.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\ClsCtx.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\ErrorCodes.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioCaptureClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioClock2.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioEndpointVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioEndpointVolumeCallback.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioMeterInformation.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioRenderClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionEnumerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionEvents.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionEventsHandler.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionManager.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioSessionNotification.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IAudioStreamVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IMMDevice.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IMMDeviceCollection.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IMMDeviceEnumerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IMMEndpoint.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IMMNotificationClient.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\IPropertyStore.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\ISimpleAudioVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\MMDeviceEnumeratorComObject.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Interfaces\StorageAccessMode.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\MMDevice.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\MMDeviceCollection.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\MMDeviceEnumerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\PropertyKey.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\PropertyKeys.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\PropertyStore.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\PropertyStoreProperty.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\PropVariant.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\Role.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\SessionCollection.cs" />
+    <Compile Include="Studio.Wizet.Audio\CoreAudioApi\SimpleAudioVolume.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\AudioMediaSubtypes.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoDescriptor.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoEnumerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoEnumFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoGuids.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoHResults.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoInputDataBufferFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoInputStatusFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoMediaType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoOutputDataBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoOutputDataBufferFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoPartialMediaType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoProcessOutputFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\DmoSetTypeFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\IEnumDmo.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\IMediaBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\IMediaObject.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\IMediaParamInfo.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\InputStreamInfoFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\IWMResamplerProps.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\MediaBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\MediaObject.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\MediaObjectSizeInfo.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\MediaParamInfo.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\MediaTypes.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\OutputStreamInfoFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\ResamplerMediaObject.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dmo\WindowsMediaMp3Decoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\BiQuadFilter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\Complex.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\EnvelopeDetector.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\EnvelopeGenerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\FastFourierTransform.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\ImpulseResponseConvolution.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\SimpleCompressor.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\SimpleGate.cs" />
+    <Compile Include="Studio.Wizet.Audio\Dsp\WdlResampler.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Map\CakewalkDrumMapping.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Map\CakewalkMapFile.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Map\MapBlockHeader.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\ChannelMode.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\DmoMp3FrameDecompressor.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\Id3v2Tag.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\IMp3FrameDecompressor.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\Mp3Frame.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\Mp3FrameDecompressor.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\MpegLayer.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\MpegVersion.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Mp3\XingHeader.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Sfz\SfzFileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\Generator.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\GeneratorBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\GeneratorEnum.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\InfoChunk.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\Instrument.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\InstrumentBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\Modulator.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\ModulatorBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\ModulatorType.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\Preset.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\PresetBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\PresetsChunk.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\RiffChunk.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SampleDataChunk.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SampleHeader.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SampleHeaderBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SampleMode.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SFSampleLink.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SFVersion.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SFVersionBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\SoundFont.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\StructureBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\Zone.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\SoundFont\ZoneBuilder.cs" />
+    <Compile Include="Studio.Wizet.Audio\FileFormats\Wav\WaveFileChunkReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Gui\Fader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\PanSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\Pot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\Pot.Designer.cs">
+      <DependentUpon>Pot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\VolumeMeter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\VolumeMeter.Designer.cs">
+      <DependentUpon>VolumeMeter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\VolumeSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\WaveformPainter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\WaveformPainter.Designer.cs">
+      <DependentUpon>WaveformPainter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Gui\WaveViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\AudioSubtypes.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFActivate.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFAttributes.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFByteStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFCollection.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFMediaBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFMediaEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFMediaType.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFReadWriteClassFactory.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFSample.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFSinkWriter.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFSourceReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\IMFTransform.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaEventType.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationAttributes.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationErrors.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationHelpers.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationTransform.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaFoundationTransformCategories.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaType.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MediaTypes.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MFT_INPUT_STREAM_INFO.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MFT_MESSAGE_TYPE.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MFT_OUTPUT_DATA_BUFFER.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MFT_OUTPUT_STREAM_INFO.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MFT_REGISTER_TYPE_INFO.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\MF_SINK_WRITER_STATISTICS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_ENUM_FLAG.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_INPUT_STATUS_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_INPUT_STREAM_INFO_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_OUTPUT_DATA_BUFFER_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_OUTPUT_STATUS_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_OUTPUT_STREAM_INFO_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_PROCESS_OUTPUT_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_PROCESS_OUTPUT_STATUS.cs" />
+    <Compile Include="Studio.Wizet.Audio\MediaFoundation\_MFT_SET_TYPE_FLAGS.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\ChannelAfterTouchEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\ControlChangeEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\KeySignatureEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MetaEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MetaEventType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiCommandCode.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiController.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiEventCollection.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiEventComparer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiFile.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiIn.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiInCapabilities.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiInMessageEventArgs.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiMessage.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiOut.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiOutCapabilities.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\MidiOutTechnology.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\NoteEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\NoteOnEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\PatchChangeEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\PitchWheelChangeEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\SequencerSpecificEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\SmpteOffsetEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\SysexEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\TempoEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\TextEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\TimeSignatureEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Midi\TrackSequenceNumberEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\BooleanMixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\CustomMixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\ListTextMixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\Mixer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerControlType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerLine.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\MixerLineComponentType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\SignedMixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Mixer\UnsignedMixerControl.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\BufferHelpers.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\ByteArrayExtensions.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\ByteEncoding.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\ChunkIdentifier.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\CircularBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\Decibels.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\FieldDescriptionAttribute.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\FieldDescriptionHelper.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\HResult.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\IEEE.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\IgnoreDisposeStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\MergeSort.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\NativeMethods.cs" />
+    <Compile Include="Studio.Wizet.Audio\Utils\ProgressLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Utils\ProgressLog.Designer.cs">
+      <DependentUpon>ProgressLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Audio\Utils\WavePositionExtensions.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\ASIODriver.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\AsioDriverCapability.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\ASIODriverExt.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\ASIOSampleConvertor.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\AsioSampleType.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Asio\ASIOStructures.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmDriver.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmDriverAddFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmDriverDetails.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmDriverDetailsSupportFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmDriverEnumFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatChoose.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatChooseStyleFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatDetails.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatEnumFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatSuggestFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatTag.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmFormatTagDetails.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmMetrics.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamConvertFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamHeader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamHeaderStatusFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamHeaderStruct.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamOpenFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\AcmStreamSizeFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\Compression\WaveFilter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\Manufacturers.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\MmException.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\MmResult.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\MmTime.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveCallbackInfo.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveCallbackStrategy.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveHeader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveHeaderFlags.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveInCapabilities.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveInEventArgs.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveInterop.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveOutCapabilities.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveOutSupport.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\MmeInterop\WaveWindow.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\ISampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Mono16SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Mono24SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Mono8SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\MonoFloatSampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Stereo16SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Stereo24SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\Stereo8SampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleChunkConverters\StereoFloatSampleChunkConverter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\AdsrSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\FadeInOutSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\MeteringSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\MixingSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\MonoToStereoSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\MultiplexingSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\NotifyingSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\OffsetSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\PanningSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\Pcm16BitToSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\Pcm24BitToSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\Pcm32BitToSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\Pcm8BitToSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleChannel.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleProviderConverterBase.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleProviderConverters.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleToWaveProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleToWaveProvider16.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SampleToWaveProvider24.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\SignalGenerator.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\VolumeSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\WaveToSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\WaveToSampleProvider64.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\SampleProviders\WdlResamplingSampleProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveExtensionMethods.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\AdpcmWaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\Gsm610WaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\ImaAdpcmWaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\Mp3WaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\OggWaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\TrueSpeechWaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WaveFormatCustomMarshaler.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WaveFormatEncoding.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WaveFormatExtensible.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WaveFormatExtraData.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveFormats\WmaWaveFormat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveInputs\IWaveIn.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveInputs\WasapiCapture.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveInputs\WasapiLoopbackCapture.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveInputs\WaveIn.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveInputs\WaveInEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\AiffFileWriter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\AsioAudioAvailableEventArgs.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\AsioOut.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\CueWaveFileWriter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\DirectSoundOut.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\IWaveBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\IWavePlayer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\IWaveProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\IWaveProviderFloat.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\MediaFoundationEncoder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\PlaybackState.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\StoppedEventArgs.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\WasapiOut.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\WaveBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\WaveFileWriter.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\WaveOut.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveOutputs\WaveOutEvent.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\BufferedWaveProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\MediaFoundationResampler.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\MixingWaveProvider32.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\MonoToStereoProvider16.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\MultiplexingWaveProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\StereoToMonoProvider16.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\VolumeWaveProvider16.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\Wave16toFloatProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\WaveFloatTo16Provider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\WaveInProvider.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\WaveProvider16.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\WaveProvider32.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveProviders\WaveRecorder.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\AiffFileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\AudioFileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\BlockAlignReductionStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\CueList.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\CueWaveFileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\ISampleNotifier.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\MediaFoundationReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\Mp3FileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\RawSourceWaveStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\ResamplerDmoStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\RiffChunk.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\SimpleCompressorStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\Wave32To16Stream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveChannel32.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveFileReader.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveFormatConversionStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveInBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveMixerStream32.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveOffsetStream.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveOutBuffer.cs" />
+    <Compile Include="Studio.Wizet.Audio\Wave\WaveStreams\WaveStream.cs" />
+    <Compile Include="Studio.Wizet.Library\Cryptography\AesEncryption.cs" />
+    <Compile Include="Studio.Wizet.Library\Cryptography\CryptoConstants.cs" />
+    <Compile Include="Studio.Wizet.Library\Cryptography\MapleCrypto.cs" />
+    <Compile Include="Studio.Wizet.Library\Cryptography\MapleCustomEncryption.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\AbstractPacket.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\Acceptor.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\Connector.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\HexEncoding.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\Monitor.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\PacketReader.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\PacketWriter.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\Session.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\SessionType.cs" />
+    <Compile Include="Studio.Wizet.Library\Packet\SocketInfo.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\IExtended.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\IPropertyContainer.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\IWzImageProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\IWzObject.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\Util\WzBinaryReader.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\Util\WzBinaryWriter.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\Util\WzKeyGenerator.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\Util\WzTool.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\Util\XmlUtil.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzDirectory.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzFile.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzHeader.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzImage.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzListFile.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzMapleVersion.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzObjectType.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzByteFloatProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzCanvasProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzCompressedIntProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzConvexProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzDoubleProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzNullProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzPngProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzSoundProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzStringProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzSubProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzUnsignedShortProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzUOLProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzProperties\WzVectorProperty.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzPropertyType.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzSerializer.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzSettings.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\Data\Data.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\Data\Enums.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\Foothold.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\InfoTool.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\MapInfo.cs" />
+    <Compile Include="Studio.Wizet.Library\Wz\WzStructure\MapleBool.cs" />
+    <Compile Include="Studio.Wizet.Windows\Components\ImageConverter.cs" />
+    <Compile Include="Studio.Wizet.Windows\Components\IniHelper.cs" />
+    <Compile Include="Studio.Wizet.Windows\Components\NewWzFile.cs" />
+    <Compile Include="Studio.Wizet.Windows\Components\OpenFolderDialog.cs" />
+    <Compile Include="Studio.Wizet.Windows\ExtractorWindow.xaml.cs">
+      <DependentUpon>ExtractorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Windows\Helper\BytesManager.cs" />
+    <Compile Include="Studio.Wizet.Windows\Helper\Output.cs" />
+    <Compile Include="Studio.Wizet.Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Windows\MassEditor.xaml.cs">
+      <DependentUpon>MassEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Wrapper\MainWindowWrapper.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\Foothold\MapUtil.xaml.cs">
+      <DependentUpon>MapUtil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Wrapper\Wz\Foothold\RenderedMap.xaml.cs">
+      <DependentUpon>RenderedMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Studio.Wizet.Wrapper\Wz\Foothold\Save.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\WzFileManager.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\WzItem.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\WzMp3Stream.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\WzItemEdit.cs" />
+    <Compile Include="Studio.Wizet.Wrapper\Wz\WzObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Gui\Fader.resx">
+      <DependentUpon>Fader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Gui\PanSlider.resx">
+      <DependentUpon>PanSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Gui\Pot.resx">
+      <DependentUpon>Pot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Gui\VolumeSlider.resx">
+      <DependentUpon>VolumeSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Gui\WaveViewer.resx">
+      <DependentUpon>WaveViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Studio.Wizet.Audio\Utils\ProgressLog.resx">
+      <DependentUpon>ProgressLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="wizet-studio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Studio.Wizet.Windows\ExtractorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Studio.Wizet.Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Studio.Wizet.Windows\MassEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Studio.Wizet.Wrapper\Wz\Foothold\MapUtil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Studio.Wizet.Wrapper\Wz\Foothold\RenderedMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Studio.Wizet.Hexview\Studio.Wizet.Hexview.csproj">
+      <Project>{586DD754-C8F2-40DF-8935-2CCC994D10F9}</Project>
+      <Name>Studio.Wizet.Hexview</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

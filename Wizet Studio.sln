@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wizet Studio", "Wizet Studio\Wizet Studio.csproj", "{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studio.Wizet.Hexview", "Studio.Wizet.Hexview\Studio.Wizet.Hexview.csproj", "{586DD754-C8F2-40DF-8935-2CCC994D10F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Debug|x64.ActiveCfg = Debug|x64
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Debug|x64.Build.0 = Debug|x64
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Release|x64.ActiveCfg = Release|x64
+		{62A2EA56-FCC5-4DFE-AE73-618BCDE5F34A}.Release|x64.Build.0 = Release|x64
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Debug|x64.ActiveCfg = Debug|x64
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Debug|x64.Build.0 = Debug|x64
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Release|x64.ActiveCfg = Release|x64
+		{586DD754-C8F2-40DF-8935-2CCC994D10F9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4A8CC9C-4A1C-4483-80CC-35032EF0AD79}
+	EndGlobalSection
+EndGlobal

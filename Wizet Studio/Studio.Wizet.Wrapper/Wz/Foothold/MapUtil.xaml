@@ -1,0 +1,63 @@
+﻿<Controls:MetroWindow x:Class="Wizet_Studio.Studio.Wizet.Wrapper.Wz.Foothold.MapUtil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wizet_Studio.Studio.Wizet.Wrapper.Wz.Foothold"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        TitleCaps="False"
+        Title="Map Utilities" Height="275" Width="600" WindowStyle="ToolWindow" IsMaxRestoreButtonEnabled="False" ShowMaxRestoreButton="False" ResizeMode="NoResize">
+    <Controls:MetroWindow.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00A2FF" Offset="0"/>
+            <GradientStop Color="#FF00FF2E" Offset="1"/>
+        </LinearGradientBrush>
+    </Controls:MetroWindow.BorderBrush>
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" SelectionChanged="tabControl_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="592" Height="210">
+            <TabItem Header="Foothold">
+                <Grid>
+                    <Label Content="Map Foothold Id: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="mapFootholdIdNumericUpDown" Value="0" Margin="129,10,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                    <Label Content="Previous Value: " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="previousValueNumericUpDown" Value="0" Margin="129,41,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                    <Label Content="Next Value: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="nextValueNumericUpDown" Value="0" Margin="129,72,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                    <Label Content="Force Value: " HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="forceValueNumericUpDown" Value="0" Margin="129,103,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Portal">
+                <Grid>
+                    <Label Content="Portal Map Id: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="portalMapIdNumericUpDown" Value="0" Margin="129,10,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Portal Type: " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="portalTypeNumericUpDown" Value="0" Margin="129,41,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch"/>
+                    <Label Content="Destination: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="destinationNumericUpDown" Value="0" Margin="129,72,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Map X: " HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="mapXNumericUpDown" Value="0" Margin="129,103,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                    <Label Content="Map Y: " HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="mapYNumericUpDown" Value="0" Margin="129,134,10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Spawnpoint">
+                <Grid>
+                    <Label Content="Mob Spawnpoint Id: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="mobSpawnPointIdNumericUpDown" Value="0" Margin="129,10,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Mob Id: " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="mobIdNumericUpDown" Value="0" Margin="129,41,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Buddy Foothold Id: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="buddyFootholdIdNumericUpDown" Value="0" Margin="129,72,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Map X: " HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="spawnPointMapXNumericUpDown" Value="0" Margin="129,103,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                    <Label Content="Map Y: " HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+                    <Controls:NumericUpDown x:Name="spawnPointMapYNumericUpDown" Value="0" Margin="129,134,10,0" IsReadOnly="True" VerticalAlignment="Top" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="button" Content="OK" Margin="0,0,10,10" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="button_Click"/>
+
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,21 @@
+﻿<Controls:MetroWindow x:Name="renderedMapWindow" x:Class="Wizet_Studio.Studio.Wizet.Wrapper.Wz.Foothold.RenderedMap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wizet_Studio.Studio.Wizet.Wrapper.Wz.Foothold"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        TitleCaps="False"
+        Title="Rendered Map" Height="500" Width="900" WindowState="Maximized" Closed="renderedMapWindow_Closed" Loaded="renderedMapWindow_Loaded">
+    <Controls:MetroWindow.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00A2FF" Offset="0"/>
+            <GradientStop Color="#FF00FF2E" Offset="1"/>
+        </LinearGradientBrush>
+    </Controls:MetroWindow.BorderBrush>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Rectangle x:Name="rectangle1" Fill="#FFF4F4F5" Stroke="Black" MouseMove="rectangle1_MouseMove" MouseLeftButtonDown="rectangle1_MouseLeftButtonDown"/>
+
+    </ScrollViewer>
+</Controls:MetroWindow>

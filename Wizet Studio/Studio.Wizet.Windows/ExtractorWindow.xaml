@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Name="extractorWindow" x:Class="Wizet_Studio.Studio.Wizet.Windows.ExtractorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wizet_Studio.Studio.Wizet.Windows"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        TitleCaps="False"
+        Title="Wizet File Extractor" Height="240" Width="670" ResizeMode="NoResize" WindowStyle="ToolWindow" Closing="extractorWindow_Closing">
+    <Controls:MetroWindow.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00A2FF" Offset="0"/>
+            <GradientStop Color="#FF00FF2E" Offset="1"/>
+        </LinearGradientBrush>
+    </Controls:MetroWindow.BorderBrush>
+    <Grid>
+        <Label Content="Wizet File: " HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
+        <Label Content="Output Directory: " HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="wizetFilePathTextBox" HorizontalAlignment="Left" Height="23" Margin="121,7,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="493" IsReadOnly="True"/>
+        <TextBox x:Name="outputDirectoryPathTextBox" HorizontalAlignment="Left" Height="23" Margin="121,37,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="493" IsReadOnly="True"/>
+        <Button x:Name="wizetFileButton" Content="..." HorizontalAlignment="Left" Margin="619,8,0,0" VerticalAlignment="Top" Width="27" Click="wizetFileButton_Click"/>
+        <Button x:Name="outputDirectoryButton" Content="..." HorizontalAlignment="Left" Margin="619,38,0,0" VerticalAlignment="Top" Width="27" Click="outputDirectoryButton_Click"/>
+        <GroupBox Header="Exporting Options" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="146" Height="120">
+            <Grid>
+                <RadioButton x:Name="dataRadioButton" Content="Data (XML)" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="resourceRadioButton" Content="Resource (MP3/PNG)" HorizontalAlignment="Left" Margin="0,33,-1,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="imageRadioButton" Content="Image (IMG)" HorizontalAlignment="Left" Margin="0,56,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="button" Content="Export" HorizontalAlignment="Left" Margin="169,173,0,0" VerticalAlignment="Top" Width="485" Click="button_Click"/>
+        <Controls:ProgressRing IsActive="False" x:Name="progressRing" Margin="203,10,137,14" Height="188" Width="188"/>
+
+
+    </Grid>
+</Controls:MetroWindow>
